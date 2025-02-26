@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: you/php84-apache
+    container_name: php-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+      - ./config/apache2.conf:/etc/apache2/apache2.conf
+    restart: always
