@@ -2,16 +2,16 @@
 FROM php:8.4-apache
 
 # 필수 패키지 및 PHP 확장 설치
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libzip-dev \
-    unzip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd \
-    && docker-php-ext-install pdo pdo_mysql mysqli zip intl
+# RUN apt-get update && apt-get install -y \
+#     libpng-dev \
+#     libjpeg-dev \
+#     libfreetype6-dev \
+#     libonig-dev \
+#     libzip-dev \
+#     unzip \
+#     && docker-php-ext-configure gd --with-freetype --with-jpeg \
+#     && docker-php-ext-install gd \
+#     && docker-php-ext-install pdo pdo_mysql mysqli zip intl
 
 # Apache mod_rewrite 활성화
 RUN a2enmod rewrite
